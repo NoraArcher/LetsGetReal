@@ -22,7 +22,7 @@ public class RealNumber{
     if (value == 0 || other.getValue() == 0) return (value == other.getValue());
     //value * 0.99999 - 99.999% of value
     //99.999 + 0.001 =  100;
-    if ( percentDiff( value, other.getValue() ) <= 0.001 ) {
+    if ( percentDiff( value, other.getValue() ) <= 0.0001 ) {
       return true;
     }
     return false;

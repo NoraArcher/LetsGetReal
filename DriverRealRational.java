@@ -1,6 +1,6 @@
 public class DriverRealRational {
-
   public static void main(String[] args) {
+
 
 
     System.out.println("\nReal Number Tests-");
@@ -15,7 +15,7 @@ public class DriverRealRational {
       RealNumber six = new RealNumber(6.3);
       RealNumber sixteen = new RealNumber(16.445799);
       RealNumber doesIt = ten.add(six);
-      if ( doesIt.getValue() == sixteen.getValue() ) {
+      if ( doesIt.equals(sixteen) ) {
         System.out.println("add test: SUCCESS");
       } else {
         System.out.println("\t\t\tadd test: FAIL");
@@ -43,28 +43,81 @@ public class DriverRealRational {
 
     System.out.println("\n---------------------------\n");
 
-    System.out.println("Rational Number Tests-");
-    if (false) {
-      RealNumber ten = new RealNumber(10.145799);
-      RealNumber notTen = new RealNumber(10.145798);
-      if ( ten.equals(notTen) ) {
+    System.out.println("Rational Number Tests (Basics) -");
+    if (true) {
+      RationalNumber Thrquarter = new RationalNumber(3, 4);
+      if ( Thrquarter.getValue() == 0.75 ) {
+        System.out.println("getValue test: SUCCESS");
+      } else {
+        System.out.println( "\t\t\tgetValue test: FAIL, value = " + Thrquarter.getValue() );
+      }
+      if ( Thrquarter.getNumerator() == 3 && Thrquarter.getDenominator() ==  4) {
+        System.out.println("get components test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tget components test: FAIL");
+      }
+      if ( Thrquarter.reciprocal().getNumerator() == 4 && Thrquarter.reciprocal().getDenominator() ==  3) {
+        System.out.println("reciprocal test: SUCCESS");
+      } else {
+        System.out.println("\t\t\treciprocal test: FAIL");
+      }
+      RationalNumber dreiViertel = new RationalNumber(3, 4);
+      RationalNumber Thrquint = new RationalNumber(3, 5);
+      if (  Thrquarter.equals(dreiViertel) && !( Thrquarter.equals(Thrquint) )  ) {
         System.out.println("equals test: SUCCESS");
       } else {
         System.out.println("\t\t\tequals test: FAIL");
       }
-      RealNumber six = new RealNumber(6.3);
-      RealNumber sixteen = new RealNumber(16.445799);
-      RealNumber doesIt = ten.add(six);
-      if ( doesIt.getValue() == sixteen.getValue() ) {
-        System.out.println("add test: SUCCESS");
+      if ( Thrquint.toString().equals("3/5") ) {
+        System.out.println("toString test: SUCCESS");
       } else {
-        System.out.println("\t\t\tadd test: FAIL");
+        System.out.println("\t\t\toString test: FAIL");
       }
     }
 
     System.out.println("\n---------------------------\n");
 
+    System.out.println("Rational Number Tests (Level 2) -");
+    if (true) {
+
+      RationalNumber complex = new RationalNumber(21, 14);
+      if ( complex.getNumerator() == 3 && complex.getDenominator() ==  2) {
+        System.out.println("reduce test: SUCCESS");
+      } else {
+        System.out.println("\t\t\treduce test: FAIL");
+      }
+      RationalNumber DreiFuenf = new RationalNumber(3, 5);
+      RationalNumber ZweiSieben = new RationalNumber(2, 7);
+      RationalNumber SweetSum = new RationalNumber(31, 35);
+      if ( DreiFuenf.add(ZweiSieben).equals(SweetSum) ) {
+        System.out.println("add test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tadd test: FAIL");
+      }
+      RationalNumber DreizehnFuenf = new RationalNumber(13, 5);
+      RationalNumber FuenfzehnSieben = new RationalNumber(15, 7);
+      RationalNumber DiddlingDifference = new RationalNumber(16, 35);
+      if ( DreizehnFuenf.subtract(FuenfzehnSieben).equals(DiddlingDifference) ) {
+        System.out.println("subtract test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tsubtract test: FAIL");
+      }
+      RationalNumber zweiDrei = new RationalNumber(2, 3);
+      RationalNumber SechsFuenf = new RationalNumber(6, 5);
+      if ( zweiDrei.divide(SechsFuenf).getNumerator() == 5 ) {
+        System.out.println("divide test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tdivide test: FAIL");
+      }
+      if ( zweiDrei.multiply(SechsFuenf).getNumerator() == 4 ) {
+        System.out.println("multiply test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tmultiply test: FAIL");
+      }
+
+    }
+
+
 
   }
-
 }

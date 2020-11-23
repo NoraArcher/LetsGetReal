@@ -2,7 +2,6 @@ public class DriverRealRational {
   public static void main(String[] args) {
 
 
-
     System.out.println("\nReal Number Tests-");
     if (true) {
       RealNumber ten = new RealNumber(10.145799);
@@ -45,6 +44,18 @@ public class DriverRealRational {
 
     System.out.println("Rational Number Tests (Basics) -");
     if (true) {
+      RationalNumber nowpos = new RationalNumber(-5, -3);
+      if ( nowpos.toString().equals("5/3") ) {
+        System.out.println("constructor test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tConstructor test: FAIL");
+      }
+      RationalNumber negneg = new RationalNumber(5, -3);
+      if ( negneg.toString().equals("-5/3") ) {
+        System.out.println("constructor test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tConstructor test: FAIL");
+      }
       RationalNumber Thrquarter = new RationalNumber(3, 4);
       if ( Thrquarter.getValue() == 0.75 ) {
         System.out.println("getValue test: SUCCESS");
@@ -56,6 +67,7 @@ public class DriverRealRational {
       } else {
         System.out.println("\t\t\tget components test: FAIL");
       }
+      System.out.println();
       if ( Thrquarter.reciprocal().getNumerator() == 4 && Thrquarter.reciprocal().getDenominator() ==  3) {
         System.out.println("reciprocal test: SUCCESS");
       } else {
@@ -69,6 +81,18 @@ public class DriverRealRational {
         System.out.println("\t\t\tequals test: FAIL");
       }
       if ( Thrquint.toString().equals("3/5") ) {
+        System.out.println("toString test: SUCCESS");
+      } else {
+        System.out.println("\t\t\toString test: FAIL");
+      }
+      RationalNumber vierr = new RationalNumber(4, 1);
+      if ( vierr.toString().equals("4") ) {
+        System.out.println("toString test: SUCCESS");
+      } else {
+        System.out.println("\t\t\toString test: FAIL");
+      }
+      RationalNumber messy = new RationalNumber(6, 0);
+      if ( messy.toString().equals("0") ) {
         System.out.println("toString test: SUCCESS");
       } else {
         System.out.println("\t\t\toString test: FAIL");
@@ -116,6 +140,36 @@ public class DriverRealRational {
       }
 
     }
+
+    System.out.println("\n---------------------------\n");
+
+    System.out.println("Abstract Number Tests  -");
+    if (true) {
+
+      RealNumber mia = new RealNumber(7.5);
+      RationalNumber moi = new RationalNumber(15, 2);
+      if (mia.compareTo(moi) == 0) {
+        System.out.println("compareTo test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tcompareTo test: FAIL");
+      }
+      RealNumber fia = new RealNumber(7.2);
+      if (fia.compareTo(mia) < 0) {
+        System.out.println("compareTo test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tcompareTo test: FAIL");
+      }
+      RealNumber foi = new RationalNumber(10, 3);
+      if (mia.compareTo(foi) > 0) {
+        System.out.println("compareTo test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tcompareTo test: FAIL");
+      }
+      //System.out.println( "\n"+mia+" compared to "+foi+" outputs "+mia.compareTo(foi) );
+
+    }
+
+    System.out.println("\n---------------------------\n");
 
 
 

@@ -165,6 +165,13 @@ public class DriverRealRational {
       } else {
         System.out.println("\t\t\tcompareTo test: FAIL");
       }
+      RealNumber moif = new RealNumber(7.5000004);
+      if (mia.compareTo(moif) == 0) {
+        System.out.println("compareTo test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tcompareTo test: FAIL");
+      }
+
       //System.out.println( "\n"+mia+" compared to "+foi+" outputs "+mia.compareTo(foi) );
 
     }

@@ -8,8 +8,8 @@ public abstract class Number{
   return a positive value when this Number is larger than the other Number
   */
   public int compareTo(Number other){
+    if (  percentDiff( this.getValue(), other.getValue() ) <= 0.0001  ) return 0;
     double mid = ( this.getValue() - other.getValue() );
-    if (mid == 0.0) return 0;
     double end = ( mid / Math.abs(mid) * (Math.abs(mid) + 1) );
     return (int)end;
   }

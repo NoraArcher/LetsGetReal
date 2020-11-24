@@ -48,13 +48,19 @@ public class DriverRealRational {
       if ( nowpos.toString().equals("5/3") ) {
         System.out.println("constructor test: SUCCESS");
       } else {
-        System.out.println("\t\t\tConstructor test: FAIL");
+        System.out.println("\t\t\tconstructor test: FAIL");
       }
       RationalNumber negneg = new RationalNumber(5, -3);
       if ( negneg.toString().equals("-5/3") ) {
         System.out.println("constructor test: SUCCESS");
       } else {
-        System.out.println("\t\t\tConstructor test: FAIL");
+        System.out.println("\t\t\tconstructor test: FAIL");
+      }
+      RationalNumber oseven = new RationalNumber(0, 7);
+      if ( oseven.getDenominator() == 7 ) {
+        System.out.println("constructor test: SUCCESS");
+      } else {
+        System.out.println("\t\t\tconstructor test: FAIL, denominator is "+oseven.getDenominator());
       }
       RationalNumber Thrquarter = new RationalNumber(3, 4);
       if ( Thrquarter.getValue() == 0.75 ) {

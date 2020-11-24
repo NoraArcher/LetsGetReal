@@ -165,7 +165,7 @@ public class DriverRealRational {
       } else {
         System.out.println("\t\t\tcompareTo test: FAIL");
       }
-      RealNumber foi = new RationalNumber(10, 3);
+      Number foi = new RationalNumber(10, 3);
       if (mia.compareTo(foi) > 0) {
         System.out.println("compareTo test: SUCCESS");
       } else {
